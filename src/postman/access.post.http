@@ -1,0 +1,178 @@
+@url_dev=http://localhost:3055/v1/api
+### signup
+
+POST {{url_dev}}/shop/signup
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+
+{
+    "name": "John Doe10",
+    "email": "jd10@gmail.com",
+    "password": "123456"
+}
+
+### login
+POST {{url_dev}}/shop/login
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+
+{
+    "email": "jd10@gmail.com",
+    "password": "123456"
+}
+
+### logout
+POST {{url_dev}}/shop/logout
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzU5ODEzOTU3LCJleHAiOjE3NjA0MTg3NTd9.HLUh7nznPVynxrmQFELjxDcuCo_OzEWZe9DS6Zfr0msIRFkJfP9teiZ3ehAnkXbhZFUA6qp0Fqo3semoPYy0pCnooknpBBIJQvEaHzd4xc782oYzdLff4-sDKF37h7RYNC-mnigsfXeDZGKcMWNM7InFu2JhYnq1GWTcFbxf8VcVYu10bMWBqpXLIXXHnAdXzKvHDaozOv1Gml_RxZ99nM-Kf2L3PnMKYbpW6h04bO3bhgHPq-lyA-TLKmdIouLyAtPtSIdf4LL2Nkr9M-YEniR8ezaEts0iH8KySApeh5_UaC56IQKOIEe1RxF551Rfyz7W_MorG6hySuGzQI_ssRYg7TfZOBSJ7ytfte8By_9VuK_X9m63MLqLuFzuhMPTkNP3kohBnGCnjy4PwrgvGKbWZDi9LlR3xjfv5HzNQ9wRvv_pi6xTXpx74zRnvdAW9elKB2vtshr-2LtyPqkXL_NCpX9w-thUG7jYAfvfYWzB4-oAO5ItjqfZJAJvEDBMo_JAn9WgCerLboHNsN9SwXQThzuhyCwHBh_XdAvDmdvDbL0hLaliluRBzfVC7xgBf_c76AUmEYxp0Ze0sOZZ12oFjI479R5FsDYFsNvnMDG9gG94X3enSZyfZM-VbXWNBrvCtxBg4NIC5XOhM4_AfhTyIGdUsiERU-3xaP-OaCw
+
+### refreshToken
+POST {{url_dev}}/shop/refresh-token
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+x-rf-token: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYwMzQ5MDkwLCJleHAiOjE3NjA5NTM4OTB9.KncLkpGD5BIhKflU4slTbJ0DtFPQWZeA98iFilFwoRi5feoUWtdu1UQBUTh6W8_8EVDBF-x-D3zEs7N24YafCkhYJCilGOEBPdeDyhTd_fNoI64Bex26wwQgagF12bHCLi6yxSI0EDRasoMYqjhCsIirMmrqCcKd-wbpvifp5ffyChE8oWHndRGv3YT8LlYxNi-1DGE-6eHm41cOGY7DZHvUNMBvtBDMwMy0f3b4e17drqr2MJ367t0eCv1ofiEDMA-M8uPgRqHBLnONJbHP8IJx5QWgYrUcxsqcPrw8dwOnn2gMj_uPw-pKxISIMw0JEnVvYnoI-DvRuu9FHKTYc9cWVR8fR5YOqvj28JgcbO7a5Rqy3xaq-YuTKyaAtIZBhPGws19jR5CO6QSVWyxRm8QcknDFfWm5Zg5p6mOu0Pfz5htyfLhJtBTnBiVXkfhBA7CJZAaKk6g7Ui0vyZ88HpSAYFU7NOEEjyHatqz14eAfBDBpUgdNbe1IMAxVmqHhGTPRXwH4E1h8Y8aJcmQ75BqJtYIFZyvT1N25UBGXWQ5xG8njpsm17ruRDaMT0C4Xsc_bOccE_YQVZcHhU-lIfHxTnPko_sYji1XumRu21Wx1Pc3y9MBugAORXLMiVntGfDHtHyTBYdSp-SIx2OE8zW6A_46PT03URc45prLguGA
+
+### post product
+POST {{url_dev}}/product
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYwNDM4NDE2LCJleHAiOjE3NjEwNDMyMTZ9.sIkbc6uF5zQIZ_hvJSmRq-MLbtg-JRIVzxuKRMEP4KjZqYBtVBG9XuD2hvSkrDjWoYQiff8IBlLX4jnfUamkb6QYenr2twa6gmiXeGd98evZujG_ywoMfx5017Ea94c9jIBo0NT7gB3yEoiCqNl3pYC1ZBVtOCW3FFWhXDAEVQa-_nn6S4G-mRTnbxJesca5eILmm2ZQoM-wotGtAEq44p0mUDZS9oR869lYf7oUa74hx0MRD8mFHEjPRaY_5EVKLVlp-kVKF-1ex5BmsMVu4Y2sUiduE1BX47PeR_vWKGByuoPZTMk0SeBz5q5-WawkeOl0XLYRG5WKgh93bsP12XcIA21N4JyJs41F8kTuxMAPw0j0_DQQfxhmSk0FDhP_t01svcwGDVBPyrLOJ0X86fFTnVYGUbCUnCc_SN8EgRj5iFwXw83ulSXxOit9jQq_k6NkYB5gAPa6KIBdTmFZFD80y8BRGDN7WVeCuohRpIl3b5CjLlUT-ClZmMq6MlQzNqZhR6MYbJbByp1qV-QWbA_F0GoIF-bbFHP7GvA9xgPiTIZiv2ws0T5cmZjC9-wjkVbEcapxbzOKeQLsoeQUywqJpUMXBN5vLJuY-vMK9C-wjpCgzXRVUMUCEHB88Ct6N8EWsSbFyLGoBGz5WCNcT1PY8ZPnqQjlDrL-rOjwzuE
+
+{
+  "product_name": "Áo Thun Nam Form Rộng 124",
+  "product_thumb": "https://example.com/images/ao-thun-nam.jpg",
+  "product_description": "Áo thun nam form rộng chất cotton 100%, thoáng mát dễ chịu.",
+  "product_price": 299000,
+  "product_quantity": 100,
+  "product_type": "Clothing",
+  "product_shop": "68e49276c58539cada55eaad",
+  "product_attributes": {
+    "brand": "Coolmate",
+    "size": "L",
+    "material": "Cotton 100%"
+  }
+}
+
+### get product by drafts
+GET {{url_dev}}/product/drafts/all
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYwNDM4NDE2LCJleHAiOjE3NjEwNDMyMTZ9.sIkbc6uF5zQIZ_hvJSmRq-MLbtg-JRIVzxuKRMEP4KjZqYBtVBG9XuD2hvSkrDjWoYQiff8IBlLX4jnfUamkb6QYenr2twa6gmiXeGd98evZujG_ywoMfx5017Ea94c9jIBo0NT7gB3yEoiCqNl3pYC1ZBVtOCW3FFWhXDAEVQa-_nn6S4G-mRTnbxJesca5eILmm2ZQoM-wotGtAEq44p0mUDZS9oR869lYf7oUa74hx0MRD8mFHEjPRaY_5EVKLVlp-kVKF-1ex5BmsMVu4Y2sUiduE1BX47PeR_vWKGByuoPZTMk0SeBz5q5-WawkeOl0XLYRG5WKgh93bsP12XcIA21N4JyJs41F8kTuxMAPw0j0_DQQfxhmSk0FDhP_t01svcwGDVBPyrLOJ0X86fFTnVYGUbCUnCc_SN8EgRj5iFwXw83ulSXxOit9jQq_k6NkYB5gAPa6KIBdTmFZFD80y8BRGDN7WVeCuohRpIl3b5CjLlUT-ClZmMq6MlQzNqZhR6MYbJbByp1qV-QWbA_F0GoIF-bbFHP7GvA9xgPiTIZiv2ws0T5cmZjC9-wjkVbEcapxbzOKeQLsoeQUywqJpUMXBN5vLJuY-vMK9C-wjpCgzXRVUMUCEHB88Ct6N8EWsSbFyLGoBGz5WCNcT1PY8ZPnqQjlDrL-rOjwzuE
+
+### get product by publish
+### get product
+GET {{url_dev}}/product/publish/all
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYwNDM4NDE2LCJleHAiOjE3NjEwNDMyMTZ9.sIkbc6uF5zQIZ_hvJSmRq-MLbtg-JRIVzxuKRMEP4KjZqYBtVBG9XuD2hvSkrDjWoYQiff8IBlLX4jnfUamkb6QYenr2twa6gmiXeGd98evZujG_ywoMfx5017Ea94c9jIBo0NT7gB3yEoiCqNl3pYC1ZBVtOCW3FFWhXDAEVQa-_nn6S4G-mRTnbxJesca5eILmm2ZQoM-wotGtAEq44p0mUDZS9oR869lYf7oUa74hx0MRD8mFHEjPRaY_5EVKLVlp-kVKF-1ex5BmsMVu4Y2sUiduE1BX47PeR_vWKGByuoPZTMk0SeBz5q5-WawkeOl0XLYRG5WKgh93bsP12XcIA21N4JyJs41F8kTuxMAPw0j0_DQQfxhmSk0FDhP_t01svcwGDVBPyrLOJ0X86fFTnVYGUbCUnCc_SN8EgRj5iFwXw83ulSXxOit9jQq_k6NkYB5gAPa6KIBdTmFZFD80y8BRGDN7WVeCuohRpIl3b5CjLlUT-ClZmMq6MlQzNqZhR6MYbJbByp1qV-QWbA_F0GoIF-bbFHP7GvA9xgPiTIZiv2ws0T5cmZjC9-wjkVbEcapxbzOKeQLsoeQUywqJpUMXBN5vLJuY-vMK9C-wjpCgzXRVUMUCEHB88Ct6N8EWsSbFyLGoBGz5WCNcT1PY8ZPnqQjlDrL-rOjwzuE
+
+### publish product
+POST {{url_dev}}/product/publish/68ef14156e0189c36f54daa5
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYwNDM4NDE2LCJleHAiOjE3NjEwNDMyMTZ9.sIkbc6uF5zQIZ_hvJSmRq-MLbtg-JRIVzxuKRMEP4KjZqYBtVBG9XuD2hvSkrDjWoYQiff8IBlLX4jnfUamkb6QYenr2twa6gmiXeGd98evZujG_ywoMfx5017Ea94c9jIBo0NT7gB3yEoiCqNl3pYC1ZBVtOCW3FFWhXDAEVQa-_nn6S4G-mRTnbxJesca5eILmm2ZQoM-wotGtAEq44p0mUDZS9oR869lYf7oUa74hx0MRD8mFHEjPRaY_5EVKLVlp-kVKF-1ex5BmsMVu4Y2sUiduE1BX47PeR_vWKGByuoPZTMk0SeBz5q5-WawkeOl0XLYRG5WKgh93bsP12XcIA21N4JyJs41F8kTuxMAPw0j0_DQQfxhmSk0FDhP_t01svcwGDVBPyrLOJ0X86fFTnVYGUbCUnCc_SN8EgRj5iFwXw83ulSXxOit9jQq_k6NkYB5gAPa6KIBdTmFZFD80y8BRGDN7WVeCuohRpIl3b5CjLlUT-ClZmMq6MlQzNqZhR6MYbJbByp1qV-QWbA_F0GoIF-bbFHP7GvA9xgPiTIZiv2ws0T5cmZjC9-wjkVbEcapxbzOKeQLsoeQUywqJpUMXBN5vLJuY-vMK9C-wjpCgzXRVUMUCEHB88Ct6N8EWsSbFyLGoBGz5WCNcT1PY8ZPnqQjlDrL-rOjwzuE
+
+### unPublish product
+POST {{url_dev}}/product/unPublish/68ee5624adcbfb9b22b1e39a
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYwNDM4NDE2LCJleHAiOjE3NjEwNDMyMTZ9.sIkbc6uF5zQIZ_hvJSmRq-MLbtg-JRIVzxuKRMEP4KjZqYBtVBG9XuD2hvSkrDjWoYQiff8IBlLX4jnfUamkb6QYenr2twa6gmiXeGd98evZujG_ywoMfx5017Ea94c9jIBo0NT7gB3yEoiCqNl3pYC1ZBVtOCW3FFWhXDAEVQa-_nn6S4G-mRTnbxJesca5eILmm2ZQoM-wotGtAEq44p0mUDZS9oR869lYf7oUa74hx0MRD8mFHEjPRaY_5EVKLVlp-kVKF-1ex5BmsMVu4Y2sUiduE1BX47PeR_vWKGByuoPZTMk0SeBz5q5-WawkeOl0XLYRG5WKgh93bsP12XcIA21N4JyJs41F8kTuxMAPw0j0_DQQfxhmSk0FDhP_t01svcwGDVBPyrLOJ0X86fFTnVYGUbCUnCc_SN8EgRj5iFwXw83ulSXxOit9jQq_k6NkYB5gAPa6KIBdTmFZFD80y8BRGDN7WVeCuohRpIl3b5CjLlUT-ClZmMq6MlQzNqZhR6MYbJbByp1qV-QWbA_F0GoIF-bbFHP7GvA9xgPiTIZiv2ws0T5cmZjC9-wjkVbEcapxbzOKeQLsoeQUywqJpUMXBN5vLJuY-vMK9C-wjpCgzXRVUMUCEHB88Ct6N8EWsSbFyLGoBGz5WCNcT1PY8ZPnqQjlDrL-rOjwzuE
+
+### search product by id
+GET {{url_dev}}/product/search/ao
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+
+### get all product
+GET {{url_dev}}/product
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+
+### get product by Id
+GET {{url_dev}}/product/68ef14156e0189c36f54daa5
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+
+### update product by id
+PATCH {{url_dev}}/product/68ef14156e0189c36f54daa5
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYwNDM4NDE2LCJleHAiOjE3NjEwNDMyMTZ9.sIkbc6uF5zQIZ_hvJSmRq-MLbtg-JRIVzxuKRMEP4KjZqYBtVBG9XuD2hvSkrDjWoYQiff8IBlLX4jnfUamkb6QYenr2twa6gmiXeGd98evZujG_ywoMfx5017Ea94c9jIBo0NT7gB3yEoiCqNl3pYC1ZBVtOCW3FFWhXDAEVQa-_nn6S4G-mRTnbxJesca5eILmm2ZQoM-wotGtAEq44p0mUDZS9oR869lYf7oUa74hx0MRD8mFHEjPRaY_5EVKLVlp-kVKF-1ex5BmsMVu4Y2sUiduE1BX47PeR_vWKGByuoPZTMk0SeBz5q5-WawkeOl0XLYRG5WKgh93bsP12XcIA21N4JyJs41F8kTuxMAPw0j0_DQQfxhmSk0FDhP_t01svcwGDVBPyrLOJ0X86fFTnVYGUbCUnCc_SN8EgRj5iFwXw83ulSXxOit9jQq_k6NkYB5gAPa6KIBdTmFZFD80y8BRGDN7WVeCuohRpIl3b5CjLlUT-ClZmMq6MlQzNqZhR6MYbJbByp1qV-QWbA_F0GoIF-bbFHP7GvA9xgPiTIZiv2ws0T5cmZjC9-wjkVbEcapxbzOKeQLsoeQUywqJpUMXBN5vLJuY-vMK9C-wjpCgzXRVUMUCEHB88Ct6N8EWsSbFyLGoBGz5WCNcT1PY8ZPnqQjlDrL-rOjwzuE
+
+{
+  "product_name": "Áo Thun Nam Form Rộng 12 - Update2",
+  "product_price": null,
+  "product_type": "Clothing",
+  "product_attributes": {
+    "brand": "Coolmate234567"
+  }
+}
+
+
+### create discount
+POST {{url_dev}}/discount
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYwNDM4NDE2LCJleHAiOjE3NjEwNDMyMTZ9.sIkbc6uF5zQIZ_hvJSmRq-MLbtg-JRIVzxuKRMEP4KjZqYBtVBG9XuD2hvSkrDjWoYQiff8IBlLX4jnfUamkb6QYenr2twa6gmiXeGd98evZujG_ywoMfx5017Ea94c9jIBo0NT7gB3yEoiCqNl3pYC1ZBVtOCW3FFWhXDAEVQa-_nn6S4G-mRTnbxJesca5eILmm2ZQoM-wotGtAEq44p0mUDZS9oR869lYf7oUa74hx0MRD8mFHEjPRaY_5EVKLVlp-kVKF-1ex5BmsMVu4Y2sUiduE1BX47PeR_vWKGByuoPZTMk0SeBz5q5-WawkeOl0XLYRG5WKgh93bsP12XcIA21N4JyJs41F8kTuxMAPw0j0_DQQfxhmSk0FDhP_t01svcwGDVBPyrLOJ0X86fFTnVYGUbCUnCc_SN8EgRj5iFwXw83ulSXxOit9jQq_k6NkYB5gAPa6KIBdTmFZFD80y8BRGDN7WVeCuohRpIl3b5CjLlUT-ClZmMq6MlQzNqZhR6MYbJbByp1qV-QWbA_F0GoIF-bbFHP7GvA9xgPiTIZiv2ws0T5cmZjC9-wjkVbEcapxbzOKeQLsoeQUywqJpUMXBN5vLJuY-vMK9C-wjpCgzXRVUMUCEHB88Ct6N8EWsSbFyLGoBGz5WCNcT1PY8ZPnqQjlDrL-rOjwzuE
+
+{
+  "name": "name fixed amount",
+  "description": "description",
+  "type": "percentage",
+  "value": 3000,
+  "max_value": 30000,
+  "code": "SHOP-1122",
+  "start_date": "2025-10-19 09:00:00",
+  "end_date": "2025-11-19 09:00:00",
+  "max _uses": 100,
+  "uses_count": 0,
+  "users_used": 1,
+  "max_uses_per_user": 1,
+  "min_order_value": 200000,
+  "created_by": 0,
+  "is_active": true,
+  "applies_to": "all",
+  "product_ids": ["68ee5624adcbfb9b22b1e39a", "68ef14156e0189c36f54daa5"]
+}
+
+### get discount by code
+GET {{url_dev}}/discount?shopId=68e49276c58539cada55eaad&limit=50&page=1
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYwNDM4NDE2LCJleHAiOjE3NjEwNDMyMTZ9.sIkbc6uF5zQIZ_hvJSmRq-MLbtg-JRIVzxuKRMEP4KjZqYBtVBG9XuD2hvSkrDjWoYQiff8IBlLX4jnfUamkb6QYenr2twa6gmiXeGd98evZujG_ywoMfx5017Ea94c9jIBo0NT7gB3yEoiCqNl3pYC1ZBVtOCW3FFWhXDAEVQa-_nn6S4G-mRTnbxJesca5eILmm2ZQoM-wotGtAEq44p0mUDZS9oR869lYf7oUa74hx0MRD8mFHEjPRaY_5EVKLVlp-kVKF-1ex5BmsMVu4Y2sUiduE1BX47PeR_vWKGByuoPZTMk0SeBz5q5-WawkeOl0XLYRG5WKgh93bsP12XcIA21N4JyJs41F8kTuxMAPw0j0_DQQfxhmSk0FDhP_t01svcwGDVBPyrLOJ0X86fFTnVYGUbCUnCc_SN8EgRj5iFwXw83ulSXxOit9jQq_k6NkYB5gAPa6KIBdTmFZFD80y8BRGDN7WVeCuohRpIl3b5CjLlUT-ClZmMq6MlQzNqZhR6MYbJbByp1qV-QWbA_F0GoIF-bbFHP7GvA9xgPiTIZiv2ws0T5cmZjC9-wjkVbEcapxbzOKeQLsoeQUywqJpUMXBN5vLJuY-vMK9C-wjpCgzXRVUMUCEHB88Ct6N8EWsSbFyLGoBGz5WCNcT1PY8ZPnqQjlDrL-rOjwzuE
+
+
+### get product name by code
+GET {{url_dev}}/discount/list_product_code?code=SHOP-1133&shopId=68e49276c58539cada55eaad&limit=50&page=1
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+
+### get amount
+POST {{url_dev}}/discount/amount
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+
+{
+  "codeId": "SHOP-1133",
+  "shopId": "68e49276c58539cada55eaad",
+  "userId": 2,
+  "products": [
+    {
+      "productId": "68f5e805b8c2d2e3a961c1bb",
+      "quantity": 1,
+      "price": 300000
+    }
+  ]
+}
+
