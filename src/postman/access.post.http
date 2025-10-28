@@ -176,3 +176,65 @@ x-api-key: d6997014f12461d33dca372f556f8366
   ]
 }
 
+
+
+// cart
+### add to cart
+POST {{url_dev}}/cart
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYxNTg0MTc5LCJleHAiOjE3NjIxODg5Nzl9.hKoWDzaenTF_hLoqa08tjm0LPe-YFIHQ1HSmG-N6Ecger4eUEC9kZ9YALfl2xyWmAqB99wtJRR8wZQPgzwjUG4E-Gbkzp1sJeKkQ4V-w65y_aHiuSe16t-lRhHkvQljHjdqdbBs1WQaZ_FoFsVB0Du9W6pCkIGmgr4-N9_8OLD4-oQhsTeL0jvogUfIIEa8ule7rfkvZ7pnJSBFIHhSOI8TbHj5K36pLXNdoK2fSXFpuBEACFgM4-LO-AzK_tgmhPzJKxNjQM6_3G_JViDJpYWUQFMHaWiHViRoMfxk0YhugBTVXGBsMWWB6x2HkvQrA2cgj0qzjL2c4YfUlzLqgjT0PCfWbEnDCqp1YT-z50dac_GGEEHI9NRYU69eSZ8SQ82TvrT_9XnFflos9WbZ_gHPUObwN3K4HmLyhxDuiEQTkGyVhWxLYog7liYgGFIPnz-XDEjOQTDuefsKqAZXuzqTO4f963ANowLY1pZoOZ4vbHliFNE_A5qBL2P_WAreBzqkBXRHzmcRt0Xgi1N6CPy7q9v2i-4-J8gcymDzaSx_1t_1btIG5livEJYAPocgGgVlx50mLHTY2grnR0k9xgmFDX1br52KE1gRb2WldlQ3qVOelPC_Zaj0mOdUfR9c9Ic__0-ds43Rm-40Yx7vqo2nTUg36xwt7jwU9aHIBw8c
+
+{
+  "userId": 1001,
+  "product": {
+    "productId": "68f279cb3eb546b1cc7fd2f8",
+    "quantity": 2,
+    "shopId": "68e49276c58539cada55eaad",
+    "name": "Áo Thun Nam Form Rộng 124",
+    "price": 299000
+  }
+}
+
+### get cart by userId
+GET {{url_dev}}/cart?userId=1001
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYxNTg0MTc5LCJleHAiOjE3NjIxODg5Nzl9.hKoWDzaenTF_hLoqa08tjm0LPe-YFIHQ1HSmG-N6Ecger4eUEC9kZ9YALfl2xyWmAqB99wtJRR8wZQPgzwjUG4E-Gbkzp1sJeKkQ4V-w65y_aHiuSe16t-lRhHkvQljHjdqdbBs1WQaZ_FoFsVB0Du9W6pCkIGmgr4-N9_8OLD4-oQhsTeL0jvogUfIIEa8ule7rfkvZ7pnJSBFIHhSOI8TbHj5K36pLXNdoK2fSXFpuBEACFgM4-LO-AzK_tgmhPzJKxNjQM6_3G_JViDJpYWUQFMHaWiHViRoMfxk0YhugBTVXGBsMWWB6x2HkvQrA2cgj0qzjL2c4YfUlzLqgjT0PCfWbEnDCqp1YT-z50dac_GGEEHI9NRYU69eSZ8SQ82TvrT_9XnFflos9WbZ_gHPUObwN3K4HmLyhxDuiEQTkGyVhWxLYog7liYgGFIPnz-XDEjOQTDuefsKqAZXuzqTO4f963ANowLY1pZoOZ4vbHliFNE_A5qBL2P_WAreBzqkBXRHzmcRt0Xgi1N6CPy7q9v2i-4-J8gcymDzaSx_1t_1btIG5livEJYAPocgGgVlx50mLHTY2grnR0k9xgmFDX1br52KE1gRb2WldlQ3qVOelPC_Zaj0mOdUfR9c9Ic__0-ds43Rm-40Yx7vqo2nTUg36xwt7jwU9aHIBw8c
+
+### delete cart item
+DELETE {{url_dev}}/cart
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYxNTg0MTc5LCJleHAiOjE3NjIxODg5Nzl9.hKoWDzaenTF_hLoqa08tjm0LPe-YFIHQ1HSmG-N6Ecger4eUEC9kZ9YALfl2xyWmAqB99wtJRR8wZQPgzwjUG4E-Gbkzp1sJeKkQ4V-w65y_aHiuSe16t-lRhHkvQljHjdqdbBs1WQaZ_FoFsVB0Du9W6pCkIGmgr4-N9_8OLD4-oQhsTeL0jvogUfIIEa8ule7rfkvZ7pnJSBFIHhSOI8TbHj5K36pLXNdoK2fSXFpuBEACFgM4-LO-AzK_tgmhPzJKxNjQM6_3G_JViDJpYWUQFMHaWiHViRoMfxk0YhugBTVXGBsMWWB6x2HkvQrA2cgj0qzjL2c4YfUlzLqgjT0PCfWbEnDCqp1YT-z50dac_GGEEHI9NRYU69eSZ8SQ82TvrT_9XnFflos9WbZ_gHPUObwN3K4HmLyhxDuiEQTkGyVhWxLYog7liYgGFIPnz-XDEjOQTDuefsKqAZXuzqTO4f963ANowLY1pZoOZ4vbHliFNE_A5qBL2P_WAreBzqkBXRHzmcRt0Xgi1N6CPy7q9v2i-4-J8gcymDzaSx_1t_1btIG5livEJYAPocgGgVlx50mLHTY2grnR0k9xgmFDX1br52KE1gRb2WldlQ3qVOelPC_Zaj0mOdUfR9c9Ic__0-ds43Rm-40Yx7vqo2nTUg36xwt7jwU9aHIBw8c
+
+{
+  "userId": 1001,
+  "productId": "68f279cb3eb546b1cc7fd2f8"
+}
+
+### update cart item
+POST {{url_dev}}/cart/update
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYxNTg0MTc5LCJleHAiOjE3NjIxODg5Nzl9.hKoWDzaenTF_hLoqa08tjm0LPe-YFIHQ1HSmG-N6Ecger4eUEC9kZ9YALfl2xyWmAqB99wtJRR8wZQPgzwjUG4E-Gbkzp1sJeKkQ4V-w65y_aHiuSe16t-lRhHkvQljHjdqdbBs1WQaZ_FoFsVB0Du9W6pCkIGmgr4-N9_8OLD4-oQhsTeL0jvogUfIIEa8ule7rfkvZ7pnJSBFIHhSOI8TbHj5K36pLXNdoK2fSXFpuBEACFgM4-LO-AzK_tgmhPzJKxNjQM6_3G_JViDJpYWUQFMHaWiHViRoMfxk0YhugBTVXGBsMWWB6x2HkvQrA2cgj0qzjL2c4YfUlzLqgjT0PCfWbEnDCqp1YT-z50dac_GGEEHI9NRYU69eSZ8SQ82TvrT_9XnFflos9WbZ_gHPUObwN3K4HmLyhxDuiEQTkGyVhWxLYog7liYgGFIPnz-XDEjOQTDuefsKqAZXuzqTO4f963ANowLY1pZoOZ4vbHliFNE_A5qBL2P_WAreBzqkBXRHzmcRt0Xgi1N6CPy7q9v2i-4-J8gcymDzaSx_1t_1btIG5livEJYAPocgGgVlx50mLHTY2grnR0k9xgmFDX1br52KE1gRb2WldlQ3qVOelPC_Zaj0mOdUfR9c9Ic__0-ds43Rm-40Yx7vqo2nTUg36xwt7jwU9aHIBw8c
+
+{
+  "userId": 1001,
+  "shop_order_ids": [
+    {
+      "shopId": "68e49276c58539cada55eaad",
+      "item_products": {
+        "shopId": "68e49276c58539cada55eaad",
+        "productId": "68f279cb3eb546b1cc7fd2f8",
+        "quantity": 9,
+        "price": 299000,
+        "old_quantity": 4
+      }
+    }
+  ]
+}

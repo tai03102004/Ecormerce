@@ -51,9 +51,10 @@ class CartService {
             productId,
             quantity
         } = product
+        console.log('productId, quantity', productId, quantity)
         const query = {
                 cart_userId: userId,
-                'cart_product.productId': productId,
+                'cart_products.productId': productId,
                 cart_state: 'active'
             },
             updateSet = {
@@ -86,13 +87,15 @@ class CartService {
             options = {
                 new: true
             }
-        return await cart.findOneAndUpdate(query, updateSet, options)
+        const result = await cart.findOneAndUpdate(query, updateSet, options);
+
+        return result;
     }
     static async addToCart({
         userId,
         product = {}
     }) {
-        const userCart = await cart.fineOne({
+        const userCart = await cart.findOne({
             cart_userId: userId
         })
         if (!userCart) {
@@ -105,12 +108,13 @@ class CartService {
         }
 
         // if cart is existing but no products
-        if (userCart.cart_products.length) {
+        if (userCart.cart_products.length === 0) {
             userCart.cart_products.push(product)
             return await userCart.save()
         }
 
         // if cart is existing and has products
+        console.log("123124", 2);
         return await CartService.updateUserCartQuantity({
             userId,
             product
@@ -137,13 +141,14 @@ class CartService {
      */
     static async addToCartV2({
         userId,
-        product = {}
+        shop_order_ids = []
     }) {
         const {
             productId,
             quantity,
             old_quantity
-        } = shop_order_ids[0]?.item_product[0];
+        } = shop_order_ids[0]?.item_products;
+        console.log('productId, quantity, old_quantity', productId, quantity, old_quantity)
         // check product
         const foundProduct = await getProductById(productId);
         if (!foundProduct) {
@@ -173,9 +178,9 @@ class CartService {
     }
 
     static async getListUserCart({
-        userId,
-        productId
+        userId
     }) {
+        console.log('userId', userId)
         return await cart.findOne({
             cart_userId: +userId,
             cart_state: 'active'

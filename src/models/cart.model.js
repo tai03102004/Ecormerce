@@ -1,9 +1,6 @@
 'use strict'
 
 const {
-    de
-} = require('@nuxt/ui/runtime/locale/index.js')
-const {
     model,
     Schema
 } = require('mongoose')
@@ -39,7 +36,7 @@ const cartSchema = new Schema({
         default: 0
     },
     cart_userId: {
-        type: Schema.Types.ObjectId,
+        type: Number,
         required: true
     }
 
