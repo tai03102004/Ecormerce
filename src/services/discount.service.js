@@ -199,6 +199,8 @@ class DiscountService {
         shopId,
         products
     }) {
+        console.log("codeId", codeId);
+        console.log("shopId", shopId);
         const foundDiscount = await checkDiscountExits({
             model: discount,
             filter: {

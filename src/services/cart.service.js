@@ -51,7 +51,6 @@ class CartService {
             productId,
             quantity
         } = product
-        console.log('productId, quantity', productId, quantity)
         const query = {
                 cart_userId: userId,
                 'cart_products.productId': productId,
@@ -107,18 +106,19 @@ class CartService {
             return newCart
         }
 
-        // if cart is existing but no products
-        if (userCart.cart_products.length === 0) {
-            userCart.cart_products.push(product)
-            return await userCart.save()
+        for (let i = 0; i < userCart.cart_products.length; i++) {
+            if (userCart.cart_products[i].productId === product.productId) {
+                // if product is existing in cart, update quantity
+                return await CartService.updateUserCartQuantity({
+                    userId,
+                    product
+                })
+            }
         }
 
-        // if cart is existing and has products
-        console.log("123124", 2);
-        return await CartService.updateUserCartQuantity({
-            userId,
-            product
-        })
+        // if cart is existing but no products
+        userCart.cart_products.push(product)
+        return await userCart.save()
     }
 
     // update cart
