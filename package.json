@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "compression": "^1.8.1",
+    "discord.js": "^14.24.2",
     "helmet": "^8.1.0",
     "morgan": "^1.10.1",
     "redis": "^5.9.0",
