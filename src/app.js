@@ -26,6 +26,18 @@ require("./dbs/init.mongodb");
 // Init routes
 app.use('/', require('./routes'));
 
+const InventoryTest = require("./tests/inventory.test");
+const ProductTest = require("./tests/product.test");
+
+const inventoryService = new InventoryTest();
+inventoryService.subcribeInventory(); // 👂 Lắng nghe trước
+
+const productService = new ProductTest();
+setTimeout(() => {
+    productService.purchaseProduct("prod-1002", 3); // 📨 Gửi message sau
+}, 1000);
+
+
 // Handle Error
 app.use((req, res, next) => {
     const error = new Error('Not Found');
