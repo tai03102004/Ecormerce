@@ -26,6 +26,9 @@ require("./dbs/init.mongodb");
 // Init routes
 app.use('/', require('./routes'));
 
+require('./workers/email.worker');
+console.log('📧 Email worker started');
+
 const InventoryTest = require("./tests/inventory.test");
 const ProductTest = require("./tests/product.test");
 

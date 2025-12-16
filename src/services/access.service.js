@@ -27,6 +27,7 @@ const {
 const {
     findByEmail
 } = require('./shop.service');
+const emailQueue = require('../queues/email.queue');
 
 class AccessService {
     static signUp = async ({
@@ -42,6 +43,9 @@ class AccessService {
             throw new BadRequestError('Error: Shop already registered!');
         }
         const passwordHash = await bcrypt.hash(password, 10);
+        await emailQueue.add('sendEmail', {
+            email: email,
+        })
         const newShop = await shopModel.create({
             name,
             email,
@@ -82,7 +86,6 @@ class AccessService {
                 email
             }, publicKey, privateKey);
 
-            console.log('Access Token + Refresh Token: ', tokens);
             return {
                 shop: getInfoData({
                     fields: ['_id', 'name', 'email'],

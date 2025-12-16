@@ -6,8 +6,8 @@ Content-Type: application/json
 x-api-key: d6997014f12461d33dca372f556f8366
 
 {
-    "name": "John Doe10",
-    "email": "jd10@gmail.com",
+    "name": "Dinh Henry 173",
+    "email": "dinhhenry173@gmail.com",
     "password": "123456"
 }
 
@@ -17,7 +17,7 @@ Content-Type: application/json
 x-api-key: d6997014f12461d33dca372f556f8366
 
 {
-    "email": "jd10@gmail.com",
+    "email": "dinhhenry173@gmail.com",
     "password": "123456"
 }
 
@@ -40,10 +40,10 @@ POST {{url_dev}}/product
 Content-Type: application/json
 x-api-key: d6997014f12461d33dca372f556f8366
 x-client-id: 68e49276c58539cada55eaad
-authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYwNDM4NDE2LCJleHAiOjE3NjEwNDMyMTZ9.sIkbc6uF5zQIZ_hvJSmRq-MLbtg-JRIVzxuKRMEP4KjZqYBtVBG9XuD2hvSkrDjWoYQiff8IBlLX4jnfUamkb6QYenr2twa6gmiXeGd98evZujG_ywoMfx5017Ea94c9jIBo0NT7gB3yEoiCqNl3pYC1ZBVtOCW3FFWhXDAEVQa-_nn6S4G-mRTnbxJesca5eILmm2ZQoM-wotGtAEq44p0mUDZS9oR869lYf7oUa74hx0MRD8mFHEjPRaY_5EVKLVlp-kVKF-1ex5BmsMVu4Y2sUiduE1BX47PeR_vWKGByuoPZTMk0SeBz5q5-WawkeOl0XLYRG5WKgh93bsP12XcIA21N4JyJs41F8kTuxMAPw0j0_DQQfxhmSk0FDhP_t01svcwGDVBPyrLOJ0X86fFTnVYGUbCUnCc_SN8EgRj5iFwXw83ulSXxOit9jQq_k6NkYB5gAPa6KIBdTmFZFD80y8BRGDN7WVeCuohRpIl3b5CjLlUT-ClZmMq6MlQzNqZhR6MYbJbByp1qV-QWbA_F0GoIF-bbFHP7GvA9xgPiTIZiv2ws0T5cmZjC9-wjkVbEcapxbzOKeQLsoeQUywqJpUMXBN5vLJuY-vMK9C-wjpCgzXRVUMUCEHB88Ct6N8EWsSbFyLGoBGz5WCNcT1PY8ZPnqQjlDrL-rOjwzuE
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYyODc3ODI0LCJleHAiOjE3NjM0ODI2MjR9.R_chvFVSg2xWvmjrQjfs48eZ0WwFhdP6SmVr4kPVDpkjb7QLMxuZqokYfRh0yb7HBr0OD9tHM_ACopgEELDGYp61DYprpSGXnAltimI925G5kevPFkEQPoQsjGo8SZvq0x15sJrEp8M9EAs-hPXA-1jhfrW4HqrRiclG44M4lSoFgWEbTcAEIMZUCMd2UNBfl_bQyIMDwudAEUtQGKqTPUXs-q7-VhqrZwcRhZGxpEOHux8Tr3d5PMjUXpUOd5TSoZCrFJsO-LenAh1ODqrK-x5gmu7EuZ8f9ZonAbCVNRhuZZTgUewHXA5NFPRaY-UubQPCZ8rWGK1dwYRq-T74jT_zxORL73DNbo_kUxshJySC3QjZWok4dcRtBud1eKUAvAqT0FfWXE-gaQG1VBgXiD4EsjP7VfOO0PXR5-stYsyiXwreB9sdZopAD4BcW5JhDg9yI1VRTFjP0uB3TH_nhekB2dDhtodd1zH7vKkh9SZG8yXOVxXKmuKw9rSdtfYhOWG683bFGDj_Wh1lz3dFLiw2pyTor6p5aZDQQTI3Ok7H2mEDIQK2R_hkci4ywWq7L5esw-q4IiezuHVFiBwytV35OmDY0UU_N8KCCbo1K8fsnnXZhlzLNBV3UGl9w7dQNgL7WnEE1yyw-J9F1f1ZSMGvHMf0MKfb9j69XpTs2Zo
 
 {
-  "product_name": "Áo Thun Nam Form Rộng 124",
+  "product_name": "Áo Thun Nam Form Rộng 12512312 hihi",
   "product_thumb": "https://example.com/images/ao-thun-nam.jpg",
   "product_description": "Áo thun nam form rộng chất cotton 100%, thoáng mát dễ chịu.",
   "product_price": 299000,
@@ -322,3 +322,10 @@ authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1
   "productId": "68ef14156e0189c36f54daa5",
   "commentId": "69136eaa2872a62b76dc082a"
 }
+
+### get notification 
+GET {{url_dev}}/notification
+Content-Type: application/json
+x-api-key: d6997014f12461d33dca372f556f8366
+x-client-id: 68e49276c58539cada55eaad
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGU0OTI3NmM1ODUzOWNhZGE1NWVhYWQiLCJlbWFpbCI6ImpkMTBAZ21haWwuY29tIiwiaWF0IjoxNzYyODc3ODI0LCJleHAiOjE3NjM0ODI2MjR9.R_chvFVSg2xWvmjrQjfs48eZ0WwFhdP6SmVr4kPVDpkjb7QLMxuZqokYfRh0yb7HBr0OD9tHM_ACopgEELDGYp61DYprpSGXnAltimI925G5kevPFkEQPoQsjGo8SZvq0x15sJrEp8M9EAs-hPXA-1jhfrW4HqrRiclG44M4lSoFgWEbTcAEIMZUCMd2UNBfl_bQyIMDwudAEUtQGKqTPUXs-q7-VhqrZwcRhZGxpEOHux8Tr3d5PMjUXpUOd5TSoZCrFJsO-LenAh1ODqrK-x5gmu7EuZ8f9ZonAbCVNRhuZZTgUewHXA5NFPRaY-UubQPCZ8rWGK1dwYRq-T74jT_zxORL73DNbo_kUxshJySC3QjZWok4dcRtBud1eKUAvAqT0FfWXE-gaQG1VBgXiD4EsjP7VfOO0PXR5-stYsyiXwreB9sdZopAD4BcW5JhDg9yI1VRTFjP0uB3TH_nhekB2dDhtodd1zH7vKkh9SZG8yXOVxXKmuKw9rSdtfYhOWG683bFGDj_Wh1lz3dFLiw2pyTor6p5aZDQQTI3Ok7H2mEDIQK2R_hkci4ywWq7L5esw-q4IiezuHVFiBwytV35OmDY0UU_N8KCCbo1K8fsnnXZhlzLNBV3UGl9w7dQNgL7WnEE1yyw-J9F1f1ZSMGvHMf0MKfb9j69XpTs2Zo

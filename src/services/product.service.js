@@ -19,6 +19,8 @@ const {
     insertInventory
 } = require('../models/repositories/inventory.repo');
 
+const NotificationService = require('./notification.service');
+
 class Product {
     constructor({
         product_name,
@@ -51,6 +53,16 @@ class Product {
                 quantity: this.product_quantity,
                 shopId: this.product_shop,
                 location: 'Not specified',
+            })
+
+            await NotificationService.pushNotiToSystem({
+                type: 'SHOP-001',
+                receiverId: 1,
+                senderId: this.product_shop,
+                options: {
+                    productId: newProduct._id,
+                    productName: newProduct.product_name
+                }
             })
         }
         return newProduct;
