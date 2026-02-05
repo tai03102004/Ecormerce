@@ -54,7 +54,8 @@ class CartService {
         const query = {
                 cart_userId: userId,
                 'cart_products.productId': productId,
-                cart_state: 'active'
+                cart_state: 'active',
+                'cart_products.quantity': {$gte: 0}
             },
             updateSet = {
                 $inc: {

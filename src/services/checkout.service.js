@@ -1,6 +1,7 @@
 'use strict'
 const {
-    findCartById
+    findCartById,
+    deleteUserCart
 } = require('../models/repositories/cart.repo')
 
 const {
@@ -61,6 +62,18 @@ class CheckoutService {
             ]
         }
     */
+    
+    /**
+     * 
+     * @param {*} shop_order_ids is array of shop orders
+     * @returns {
+     *  shop_order_ids is array of shop orders,
+     *  shop_order_ids_new is array of shop orders after apply discount,
+     *  checkout_order is object checkout order {
+     *     totalPrice, feeShip, totalDiscount, totalCheckout
+     *  } 
+     * }
+     */
     static async checkoutReview({
         cartId,
         userId,
@@ -71,12 +84,12 @@ class CheckoutService {
             throw new BadRequestError('Cart not found')
         }
         const checkout_order = {
-                totalPrice: 0,
-                feeShip: 0,
-                totalDiscount: 0,
-                totalCheckout: 0,
-            },
-            shop_order_ids_new = []
+            totalPrice: 0,
+            feeShip: 0,
+            totalDiscount: 0,
+            totalCheckout: 0,
+        },
+        shop_order_ids_new = []
 
         for (let i = 0; i < shop_order_ids.length; i++) {
             const {
@@ -88,7 +101,7 @@ class CheckoutService {
             const checkProductServer = await checkProductByServer(item_products);
             if (!checkProductServer[0]) throw new BadRequestError('Order wrong!!');
 
-            // calculate price
+            // calculate original price
             const checkoutPrice = checkProductServer.reduce((acc, product) => {
                 return acc + (product.price * product.quantity)
             }, 0)
@@ -107,9 +120,9 @@ class CheckoutService {
             if (shop_discounts.length > 0) {
                 // get discount from service
                 const {
-                    totalPrice = 0, discount = 0
+                    discount = 0
                 } = await getDiscountAmount({
-                    codeId: shop_discounts?. [0]?.codeId,
+                    codeId: shop_discounts?.[0]?.codeId,
                     userId,
                     shopId,
                     products: checkProductServer
@@ -151,9 +164,8 @@ class CheckoutService {
         })
 
         // check lai  mot lan nua xem vuot ton kho hay khong?
-        // get new array Products (optimistic locks) => de xu ly tru ton kho
+        // get new array Products optimistic locks and pessimistic locking => de xu ly tru ton kho
         const products = shop_order_ids_new.flatMap(order => order.item_products)
-        console.log(`123 products: `, products)
         const acquireProduct = []
         for (let i = 0; i < products.length; i++) {
             const {
@@ -182,7 +194,7 @@ class CheckoutService {
 
         // TH: new insert thanh cong -> remove product in my cart
         if (newOrder) {
-
+            await deleteUserCart(userId, cartId)
         }
 
         return newOrder
@@ -191,29 +203,55 @@ class CheckoutService {
         1. query Order [Users]
     */
 
-    static async getOrderByUser() {
-
+    static async getOrderByUser({userId, limit = 10, page = 1}) {
+        return await order.find({
+            order_userId: userId
+        })
+        .limit(+limit)
+        .skip((+page - 1) * +limit)
+        .sort({ ctime: -1 })
     }
 
     /*
         1. query Order Using Id [Users]
     */
 
-    static async getOneOrderByUser() {
+    static async getOneOrderByUser({userId, orderId}) {
+        const foundOrder = await order.findOne({
+            _id: orderId,
+            order_userId: userId
+        }).lean()
 
+        if (!foundOrder) {
+            throw new NotFoundError('Order not found')
+        }
+        return foundOrder
     }
     /*
         1. cancel Order [Users]
     */
 
-    static async cancelOrderByUser() {
+    static async cancelOrderByUser({userId, orderId}) {
+        const foundOrder = await order.findOne({
+            _id: orderId,
+            order_userId: userId
+        }).lean()
+
 
     }
     /*
         1. Update Order Status  [Shop | Admin]
     */
 
-    static async updateOrderStatusShop() {
+    static async updateOrderStatusShop({userId, orderId, status}) {
+        const foundOrder = await order.findOne({
+            _id: orderId
+        }).lean()
+
+        if (!foundOrder) {
+            throw new NotFoundError('Order not found')
+        }
+        return foundOrder
 
     }
 }

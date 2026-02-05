@@ -2,6 +2,7 @@
 
 const redis = require('redis')
 const redisClient = redis.createClient()
+const { reservationInventory } = require('../models/repositories/inventory.repo');
 
 
 redisClient.on('error', (err) => console.error('Redis Client Error:', err));
@@ -23,7 +24,7 @@ const acquiredLock = async (productId, quantity, cartId) => {
             // Lock acquired (inventory reserved), set expiration
             const isReversation = await reservationInventory({
                 productId,
-                quantity,
+                quantity, 
                 cartId
             })
             if (isReversation.modifiedCount) {

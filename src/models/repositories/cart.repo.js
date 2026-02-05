@@ -31,7 +31,15 @@ const checkProductByServer = async (products) => {
     }))
 }
 
+const deleteUserCart = async(userId, cartId) => {
+    return await cart.deleteOne({
+        _id: convertToObjectMongoDB(cartId),
+        cart_userId: convertToObjectMongoDB(userId)
+    })
+}
+
 module.exports = {
     findCartById,
-    checkProductByServer
+    checkProductByServer,
+    deleteUserCart
 }

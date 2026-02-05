@@ -252,6 +252,7 @@ class DiscountService {
             totalPrices: totalOrderValue - amount
         }
     }
+    
     static async deleteDiscountCode({
         shopId,
         codeId

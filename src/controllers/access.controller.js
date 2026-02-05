@@ -1,7 +1,6 @@
 'use strict'
 const AccessService = require('../services/access.service');
 const {
-    OK,
     Created,
     SuccessResponse
 } = require('../core/success.response');

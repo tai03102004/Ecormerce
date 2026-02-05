@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # RabbitMQ với giao diện quản lý (Management UI)
+  rabbitMQ:
+    image: rabbitmq:3-management
+    container_name: rabbitMQ
+    ports:
+      - "5672:5672"   # Cổng kết nối dữ liệu
+      - "15672:15672" # Cổng giao diện Web (mặc định user/pass: guest/guest)
+    restart: always
+
+  # Redis
+  rdb:
+    image: redis:latest
+    container_name: rdb
+    ports:
+      - "6379:6379"
+    restart: always
+
+  # MongoDB
+  mdb:
+    image: mongo:latest
+    container_name: mdb
+    ports:
+      - "27017:27017"
+    restart: always
+
+  # Zookeeper (Cần thiết cho Kafka)
+  zookeeperMQ:
+    image: wurstmeister/zookeeper:latest
+    container_name: zookeeperMQ
+    ports:
+      - "2181:2181"
+    restart: always
+
+  # Kafka
+  kafkaMQ:
+    image: wurstmeister/kafka:latest
+    container_name: kafkaMQ
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeperMQ:2181
+    depends_on:
+      - zookeeperMQ
+    restart: always
