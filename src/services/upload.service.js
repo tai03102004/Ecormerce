@@ -2,21 +2,44 @@
 
 // 1. upload from url image
 const cloudinary = require('../configs/cloudinary');
-const {s3 , PutObjectCommand} = require('../configs/s3.config');
+const {s3 , PutObjectCommand ,GetObjectCommand} = require('../configs/s3.config');
+// const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
+const { getSignedUrl } =  require("@aws-sdk/cloudfront-signer");
+
+const crypto = require('crypto');
+const urlImagePublic = 'https://dh9vmcsnw0a30.cloudfront.net';
 //// S3 upload image ////
-
+const randomFileName = () => crypto.randomBytes(16).toString('hex');
 const uploadImageFromLocalS3 = async ({ file }) => {
-
+    const fileName = randomFileName();
     const command = new PutObjectCommand({
         Bucket: process.env.AWS_BUCKET_NAME,
-        Key: file.originalname || 'unknown',
+        Key: fileName,
         Body: file.buffer,
         ContentType: file.mimetype, // that is what your need!
     });
 
     const result = await s3.send(command)
+    // const getObjectCommand = new GetObjectCommand({
+    //     Bucket: process.env.AWS_BUCKET_NAME,
+    //     Key: command.input.Key,
+    // })
 
-    return result
+    // const url = await getSignedUrl(s3, getObjectCommand, { expiresIn: 3600 });
+    
+    // have cloudFront url export
+    const url = getSignedUrl({
+        url: `${urlImagePublic}/${fileName}`,
+        keyPairId: process.env.PUBLIC_KEY_CLOUDFRONT,
+        dateLessThan: new Date(Date.now() + 60 * 60 * 1000), // 1 hour
+        privateKey: process.env.PRIAVATE_KEY_CLOUDFRONT,
+    });   
+
+    console.log('Signed URL: ', url);
+    return {
+        url,
+        result
+    }
 }
 
 
